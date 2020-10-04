@@ -1,13 +1,12 @@
 import traceback
 import discord
 
-from discord.ext import commands
-
 from config.config import token, name, log_level, log_type
 from .utils.logger import Logger
+from bridge.implementations import BridgeBot
 
 
-class Bot(commands.Bot):
+class Bot(BridgeBot):
     """A subclassed version of commands.Bot"""
 
     def __init__(self, debug=False, *args, **kwargs):
